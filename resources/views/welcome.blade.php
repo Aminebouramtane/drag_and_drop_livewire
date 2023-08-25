@@ -7,12 +7,6 @@
     <script src="https://cdn.jsdelivr.net/npm/interactjs@1.10.11/dist/interact.min.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <title>Drag & Drop</title>
-    @livewireStyles
-    <style>
-        body{
-            background-color: rgb(144, 141, 141);
-        }
-    </style>
 </head>
 <body>
     <livewire:counter /> 

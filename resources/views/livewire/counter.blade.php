@@ -1,26 +1,32 @@
-<div>
-    <div class="list-container">
-    <h2>List 1</h2>
-    <ul id="list1" class="sortable-list" wire:sortable="moveItem('list1', $index)" wire:sortable-group="list1">
-        @foreach ($list1 as $index => $item)
-            <li wire:sortable.item="{{ $index }}" wire:key="list1-{{ $item->id }}">
-                {{ $item->name }}
-            </li>
-        @endforeach
-    </ul>
+<div class="container" style="margin-top: 80px">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="list-container p-3 border rounded shadow">
+                <h2>List 1</h2>
+                <ul id="list1" class="sortable-list list-unstyled" wire:sortable="moveItem('list1', $index)" wire:sortable-group="list1">
+                    @foreach ($list1 as $index => $item)
+                        <li class="sortable-item" wire:sortable.item="{{ $index }}" wire:key="list1-{{ $item->id }}">
+                            {{ $item->name }}
+                        </li>
+                    @endforeach
+                </ul>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="list-container p-3 border rounded shadow">
+                <h2>List 2</h2>
+                <ul id="list2" class="sortable-list list-unstyled" wire:sortable="moveItem('list2', $index)" wire:sortable-group="list2">
+                    @foreach ($list2 as $index => $item)
+                        <li class="sortable-item" wire:sortable.item="{{ $index }}" wire:key="list2-{{ $item->id }}">
+                            {{ $item->name }}
+                        </li>
+                    @endforeach
+                </ul>
+            </div>
+        </div>
+    </div>
 </div>
 
-<div class="list-container">
-    <h2>List 2</h2>
-    <ul id="list2" class="sortable-list" wire:sortable="moveItem('list2', $index)" wire:sortable-group="list2">
-        @foreach ($list2 as $index => $item)
-            <li wire:sortable.item="{{ $index }}" wire:key="list2-{{ $item->id }}">
-                {{ $item->name }}
-            </li>
-        @endforeach
-    </ul>
-</div>
-</div>
 
 
 <script>
