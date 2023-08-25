@@ -1,27 +1,27 @@
 <div>
     <div class="list-container">
-        <h2>List 1</h2>
-        <ul id="list1" class="sortable-list" wire:sortable="moveItem" wire:sortable-group="list1">
-            @foreach ($list1 as $item)
-                <li wire:sortable.item="{{ $item }}" wire:key="list1-{{ $item }}">
-                    {{ $item }}
-                </li>
-            @endforeach
-        </ul>
-    </div>
-    
-    <div class="list-container">
-        <h2>List 2</h2>
-        <ul id="list2" class="sortable-list" wire:sortable="moveItem" wire:sortable-group="list2">
-            @foreach ($list2 as $item)
-                <li wire:sortable.item="{{ $item }}" wire:key="list2-{{ $item }}">
-                    {{ $item }}
-                </li>
-            @endforeach
-        </ul>
-    </div>
-
+    <h2>List 1</h2>
+    <ul id="list1" class="sortable-list" wire:sortable="moveItem('list1', $index)" wire:sortable-group="list1">
+        @foreach ($list1 as $index => $item)
+            <li wire:sortable.item="{{ $index }}" wire:key="list1-{{ $item->id }}">
+                {{ $item->name }}
+            </li>
+        @endforeach
+    </ul>
 </div>
+
+<div class="list-container">
+    <h2>List 2</h2>
+    <ul id="list2" class="sortable-list" wire:sortable="moveItem('list2', $index)" wire:sortable-group="list2">
+        @foreach ($list2 as $index => $item)
+            <li wire:sortable.item="{{ $index }}" wire:key="list2-{{ $item->id }}">
+                {{ $item->name }}
+            </li>
+        @endforeach
+    </ul>
+</div>
+</div>
+
 
 <script>
     interact('.sortable-list li')
